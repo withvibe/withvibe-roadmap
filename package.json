@@ -1,0 +1,50 @@
+{
+  "name": "withvibe-plugin-roadmap",
+  "version": "2.0.0",
+  "description": "Per-env implementation roadmap board for WithVibe — Postgres-backed, with an MCP server the AI orchestrator drives directly.",
+  "license": "Apache-2.0",
+  "author": "WithVibe (https://withvibe.dev)",
+  "homepage": "https://github.com/withvibe/roadmap#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withvibe/roadmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/withvibe/roadmap/issues"
+  },
+  "keywords": [
+    "withvibe",
+    "withvibe-plugin",
+    "mcp",
+    "ai",
+    "agent",
+    "roadmap",
+    "tasks",
+    "tracker",
+    "planning"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "express": "^5.0.0",
+    "pg": "^8.13.0",
+    "zod": "^3.23.8"
+  },
+  "overrides": {
+    "brace-expansion": "^2.0.3",
+    "cross-spawn": "^7.0.5",
+    "diff": "^5.2.2",
+    "glob": "^10.5.0",
+    "ip-address": "^10.1.1",
+    "minimatch": "^9.0.7",
+    "tar": "^7.5.11"
+  }
+}

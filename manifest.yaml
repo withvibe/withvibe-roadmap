@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2026 WithVibe
+# SPDX-License-Identifier: Apache-2.0
+
+id: withvibe.roadmap
+name: Roadmap
+description: Per-env roadmap board with an MCP server the agent can drive.
+version: 2.0.0
+icon: list-todo
+
+# Built locally for now. Rebuild after changes:
+#   docker build -t local/roadmap:2.0 .
+image: local/roadmap:2.0
+
+# env scope: one container per env. Each env is its own feature/task in
+# WithVibe, so each env gets its own roadmap. Postgres schema is isolated
+# per (env, plugin) automatically.
+scope: env
+
+# Persistent state. The platform provisions a dedicated role + schema in
+# the withvibe_plugins database and injects DATABASE_URL + PGSCHEMA.
+storage:
+  kind: shared-postgres
+
+ui:
+  path: /ui
+  websocket: false
+
+mcp:
+  enabled: true
+  path: /mcp
