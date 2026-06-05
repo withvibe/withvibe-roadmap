@@ -7,9 +7,13 @@ description: Per-env roadmap board with an MCP server the agent can drive.
 version: 2.0.0
 icon: list-todo
 
-# Built locally for now. Rebuild after changes:
-#   docker build -t local/roadmap:2.0 .
-image: local/roadmap:2.0
+# Published to GitHub Container Registry. Multi-arch (linux/amd64 + linux/arm64).
+# To rebuild + republish:
+#   docker buildx build --builder=withvibe-builder \
+#     --platform linux/amd64,linux/arm64 \
+#     -t ghcr.io/withvibe/roadmap:2.0 -t ghcr.io/withvibe/roadmap:latest \
+#     --push .
+image: ghcr.io/withvibe/roadmap:2.0
 
 # env scope: one container per env. Each env is its own feature/task in
 # WithVibe, so each env gets its own roadmap. Postgres schema is isolated
